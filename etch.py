@@ -49,7 +49,7 @@ def dial(x, y):
     # Update the canvas with the new line
     repaint(canvas)
   
-  #The shake function is used to clear the screen.
+  # The shake function is used to clear the screen.
 def shake(shakecount, canvas):
   soundShake = makeSound("rattle.wav")
   
@@ -85,7 +85,7 @@ def getChars(char, str, len):
       press += len  
   return press
 
-#Code used to display the help menu
+# Code used to display the help menu
 def displayHelp():
   showInformation("Welcome to Etch-A-Sketch\nTo play, use the following command reference:\n\n\
   w - moves the cursor up\n\
@@ -105,7 +105,8 @@ def displayHelp():
   mute - turns music off\n\
   help - displays this window\n\
   save - saves your drawing with the desired filename")
-     
+
+# Called to start the program. Contains a the main game loop
 def main():
   # Setup the canvas and initialize the starting point
   init()
