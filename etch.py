@@ -1,4 +1,6 @@
 import random
+import datetime
+import java.awt.Font as Font
 
 canvas = 0
 frame = 0
@@ -88,7 +90,13 @@ def main():
         if not filename:
           continue;
         else:
-          writePictureTo(canvas, filename + ".png")
+          outputcanvas = makeEmptyPicture(701,501)
+          pyCopy(canvas, outputcanvas, 0 ,0 )
+          now = datetime.datetime.now()
+          
+          addTextWithStyle(outputcanvas, 130, 465, "This masterpiece was created at: " + 
+          now.strftime("%Y-%m-%d %I:%M %p"), makeStyle("Comic Sans", Font.ITALIC, 16))
+          writePictureTo(outputcanvas, filename + ".png")
           showInformation("File saved!\n" + filename + ".png")
           break;
     elif(str == 'help'):
@@ -103,3 +111,9 @@ def main():
     if(str == "exit"):
       stopPlaying(introSong)
       draw = false
+      
+def pyCopy(source, target, targetX, targetY):
+  for x in range(0, getWidth(source)):
+    for y in range(0, getHeight(source)):
+      setColor(getPixel(target, x + targetX, y + targetY), getColor(getPixel(source, x, y)))
+  return target
