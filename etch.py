@@ -8,17 +8,25 @@ import random
 import datetime
 import java.awt.Font as Font
 
+<<<<<<< HEAD
 # Initialize variables
+=======
+#canvas frame points
+>>>>>>> 2bb76c8150a6c075eb4d7a689308fdfa75bd26dc
 canvas = 0
 frame = 0
 point = {'x': 0, 'y': 0}
-media = 0
 introSong = ""
 
+#initializes the canvas, and adds the frame.
 def init():
+<<<<<<< HEAD
   global point, canvas, media
   
   # Project directory that all visual/audio resources will be pulled from
+=======
+  global point, canvas
+>>>>>>> 2bb76c8150a6c075eb4d7a689308fdfa75bd26dc
   setMediaFolder("/home/Michael/Documents/CST 205/JES/final/Byte-Bistro-Etch-A-Sketch")
   
   # Create the empty canvas for the frame to be placed onto
@@ -34,7 +42,7 @@ def init():
   
   # Display initial canvas
   show(canvas)
-  
+
 def dial(x, y):
   # Ensures the cursor remains within the white frame's boundaries
   if (point['x'] + x > 80) and (point['x'] + x <= 620) and (point['y'] + y > 70) and (point['y'] + y <= 425):
@@ -100,7 +108,8 @@ def displayHelp():
   shake - distorts the picture; clears the picture completely after 4 shakes\n\
   help - displays this window\n\
   save - saves your drawing with the desired filename")
-     
+  
+#the main function called to start the program. Contains a while loop the will finish when the use enters "exit"
 def main():
   # Setup the canvas and initialize the starting point
   init()
@@ -161,8 +170,13 @@ def main():
     if(str == "exit"):
       stopPlaying(introSong)
       draw = false
+<<<<<<< HEAD
 
 # Used to create a copy of the canvas before saving to PNG            
+=======
+      
+      
+>>>>>>> 2bb76c8150a6c075eb4d7a689308fdfa75bd26dc
 def pyCopy(source, target, targetX, targetY):
   for x in range(0, getWidth(source)):
     for y in range(0, getHeight(source)):
