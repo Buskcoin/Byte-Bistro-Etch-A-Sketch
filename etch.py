@@ -91,3 +91,5 @@ def main():
     dial(x,y)
     if(str == "exit"):
        draw = false
+       stopPlaying(introSong)
+       
