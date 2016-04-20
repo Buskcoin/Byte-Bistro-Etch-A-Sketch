@@ -4,10 +4,11 @@ canvas = 0
 frame = 0
 point = {'x': 0, 'y': 0}
 media = 0
+introSong = ""
 
 def init():
   global point, canvas, media
-  setMediaFolder("C:\Users\Bob\Documents\CSUMB\Python\Final\byte-bistro-etch-a-sketch")
+  setMediaFolder("/home/Michael/Documents/CST 205/JES/final/Byte-Bistro-Etch-A-Sketch")
   canvas = makeEmptyPicture(700,500)
   frame = makePicture("frame.png")
   copyInto(frame, canvas, 0 ,0 )
@@ -23,7 +24,7 @@ def dial(x, y):
     repaint(canvas)
   
 def shake(shakecount, canvas):
-  soundShake = makeSound("C:\\Users\\janpa\\Music\\11874__medialint__gourd-rattle-short-shake.wav")
+  soundShake = makeSound("rattle.wav")
   if shakecount >= 3:
     frame = makePicture("frame.png")
     copyInto(frame, canvas, 0 ,0 )
@@ -69,7 +70,7 @@ def main():
   draw = true
   len = 20
   shakecount = 0
-  introSong = makeSound("C:\\Users\\janpa\\Music\\010114gamebgm(games).wav")
+  introSong = makeSound("music.wav")
   play(introSong)
   displayHelp()
 
@@ -90,4 +91,5 @@ def main():
       x -= getChars( 'a', str, len)
     dial(x,y)
     if(str == "exit"):
-       draw = false
+      stopPlaying(introSong)
+      draw = false
