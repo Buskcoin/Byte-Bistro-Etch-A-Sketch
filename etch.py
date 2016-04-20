@@ -9,7 +9,7 @@ introSong = ""
 def init():
   global point, canvas, media
   setMediaFolder("/home/Michael/Documents/CST 205/JES/final/Byte-Bistro-Etch-A-Sketch")
-  canvas = makeEmptyPicture(700,500)
+  canvas = makeEmptyPicture(701,501)
   frame = makePicture("frame.png")
   copyInto(frame, canvas, 0 ,0 )
   point['x'] = getWidth(canvas)/2;
