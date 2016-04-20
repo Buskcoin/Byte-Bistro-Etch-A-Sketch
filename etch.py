@@ -15,6 +15,7 @@ point = {'x': 0, 'y': 0}
 media = 0
 introSong = ""
 
+#initializes the canvas, and adds the frame.
 def init():
   global point, canvas, media
   
@@ -83,6 +84,7 @@ def getChars(char, str, len):
       press += len  
   return press
 
+#Code used to display the help menu
 def displayHelp():
   showInformation("Welcome to Etch-A-Sketch\nTo play, use the following command reference:\n\n\
   w - moves the cursor up\n\
