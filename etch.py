@@ -63,7 +63,8 @@ def displayHelp():
   awawaw - moves the cursor up to the left three times\n\
   Other commands:\n\
   shake - distorts the picture; clears the picture completely after 4 shakes\n\
-  help - Displays this window")
+  help - displays this window\n\
+  save - saves your drawing with the desired filename")
      
 def main():
   init()
@@ -81,6 +82,15 @@ def main():
     if(str == 'shake'):
       shakecount = shake(shakecount, canvas)
       continue;
+    elif(str == 'save'):
+      while(True):
+        filename = requestString("Enter the filename you would like to save your picture as without any extension:")
+        if not filename:
+          continue;
+        else:
+          writePictureTo(canvas, filename + ".png")
+          showInformation("File saved!\n" + filename + ".png")
+          break;
     elif(str == 'help'):
       displayHelp()
       continue;
