@@ -2,14 +2,15 @@ import random
 import datetime
 import java.awt.Font as Font
 
+#canvas frame points
 canvas = 0
 frame = 0
 point = {'x': 0, 'y': 0}
-media = 0
 introSong = ""
 
+#initializes the canvas, and adds the frame.
 def init():
-  global point, canvas, media
+  global point, canvas
   setMediaFolder("/home/Michael/Documents/CST 205/JES/final/Byte-Bistro-Etch-A-Sketch")
   canvas = makeEmptyPicture(701,501)
   frame = makePicture("frame.png")
@@ -17,7 +18,7 @@ def init():
   point['x'] = getWidth(canvas)/2;
   point['y'] = getHeight(canvas)/2;
   show(canvas)
-  
+
 def dial(x, y):
   if (point['x'] + x > 80) and (point['x'] + x <= 620) and (point['y'] + y > 70) and (point['y'] + y <= 425):
     addLine(canvas, point['x'], point['y'], point['x']+ x, point['y']+ y )
@@ -67,7 +68,8 @@ def displayHelp():
   shake - distorts the picture; clears the picture completely after 4 shakes\n\
   help - displays this window\n\
   save - saves your drawing with the desired filename")
-     
+  
+#the main function called to start the program. Contains a while loop the will finish when the use enters "exit"
 def main():
   init()
   draw = true
@@ -111,6 +113,7 @@ def main():
     if(str == "exit"):
       stopPlaying(introSong)
       draw = false
+      
       
 def pyCopy(source, target, targetX, targetY):
   for x in range(0, getWidth(source)):
