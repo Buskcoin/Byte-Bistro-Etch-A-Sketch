@@ -1,3 +1,5 @@
+#BYTE BISTRO ETCH A SKETCH
+#Oswaldo Minez, Keith Groves, JanPatrick Camaclang, Samuel Roy, Michael Goss
 import random
 import datetime
 import java.awt.Font as Font
