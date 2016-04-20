@@ -12,15 +12,14 @@ import java.awt.Font as Font
 canvas = 0
 frame = 0
 point = {'x': 0, 'y': 0}
-media = 0
 introSong = ""
 
 # Initializes the canvas, and adds the frame.
 def init():
-  global point, canvas, media
+  global point, canvas
   
   # Project directory that all visual/audio resources will be pulled from
-  setMediaFolder("/home/Michael/Documents/CST 205/JES/final/Byte-Bistro-Etch-A-Sketch")
+  setMediaFolder("/home/Michael/Desktop/ByteBistro_FinalProject")
   
   # Create the empty canvas for the frame to be placed onto
   canvas = makeEmptyPicture(701,501)
@@ -102,6 +101,8 @@ def displayHelp():
   awawaw - moves the cursor up to the left three times\n\
   Other commands:\n\
   shake - distorts the picture; clears the picture completely after 4 shakes\n\
+  music - plays the background music\n\
+  mute - turns music off\n\
   help - displays this window\n\
   save - saves your drawing with the desired filename")
      
@@ -130,6 +131,13 @@ def main():
     if(str == 'shake'):
       shakecount = shake(shakecount, canvas)
       continue;
+    elif(str == 'music'):
+      # Stops and replays music
+      stopPlaying(introSong)
+      play(introSong)
+    elif(str == 'mute'):
+      # Turns the music off
+      stopPlaying(introSong)
     elif(str == 'save'):
       while(True):
         filename = requestString("Enter the filename you would like to save your picture as without any extension:")
