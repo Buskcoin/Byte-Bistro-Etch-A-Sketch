@@ -43,7 +43,8 @@ def shake(shakecount, canvas):
   repaint(canvas)
   play(soundShake)
   return (shakecount + 1)
-
+  
+#checks the string inputed for specific characters and returns the length to draw the line. 
 def getChars(char, str, len):
   press = 0
   for key in str:
