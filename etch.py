@@ -36,6 +36,7 @@ def init():
   # Display initial canvas
   show(canvas)
   
+  #dial function simulates the dials on an etch-a-sketch by moving drawing coordinates.
 def dial(x, y):
   # Ensures the cursor remains within the white frame's boundaries
   if (point['x'] + x > 80) and (point['x'] + x <= 620) and (point['y'] + y > 70) and (point['y'] + y <= 425):
@@ -49,6 +50,7 @@ def dial(x, y):
     # Update the canvas with the new line
     repaint(canvas)
   
+  #The shake function is used to clear the screen.
 def shake(shakecount, canvas):
   soundShake = makeSound("rattle.wav")
   
