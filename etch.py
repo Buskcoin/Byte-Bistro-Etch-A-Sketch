@@ -15,7 +15,7 @@ point = {'x': 0, 'y': 0}
 media = 0
 introSong = ""
 
-#initializes the canvas, and adds the frame.
+# Initializes the canvas, and adds the frame.
 def init():
   global point, canvas, media
   
@@ -36,7 +36,7 @@ def init():
   # Display initial canvas
   show(canvas)
   
-  #dial function simulates the dials on an etch-a-sketch by moving drawing coordinates.
+# Simulates the dials on an Etch-A-Sketch by moving drawing coordinates.
 def dial(x, y):
   # Ensures the cursor remains within the white frame's boundaries
   if (point['x'] + x > 80) and (point['x'] + x <= 620) and (point['y'] + y > 70) and (point['y'] + y <= 425):
